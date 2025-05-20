@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { reviews, Star, cn } from "./../ImpExp.jsx";
 
 const TestimonialsSection = () => {
   const sectionRef = useRef(null);

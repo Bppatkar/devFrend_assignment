@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { CheckCircle } from "./../ImpExp.jsx";
 
 const WhyChooseUsSection = () => {
   const sectionRef = useRef(null);

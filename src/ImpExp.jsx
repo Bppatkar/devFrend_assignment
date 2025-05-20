@@ -3,9 +3,6 @@ import {
   MapPin,
   Phone,
   Clock,
-  Instagram,
-  Facebook,
-  Twitter,
   ChevronRight,
   User,
   Star,
@@ -16,6 +13,7 @@ import {
   Calendar,
   ChevronDown,
 } from "lucide-react";
+import { RiFacebookFill, RiInstagramFill, RiTwitterFill } from 'react-icons/ri';
 import { Button } from "@/components/ui/button.jsx";
 import { Input } from "@/components/ui/input.jsx";
 import { Textarea } from "@/components/ui/textarea.jsx";
@@ -158,9 +156,6 @@ export {
   MapPin,
   Phone,
   Clock,
-  Instagram,
-  Facebook,
-  Twitter,
   ChevronRight,
   User,
   Star,
@@ -188,3 +183,5 @@ export {
   galleryImages,
   footerLinks,
 };
+
+export { RiFacebookFill, RiInstagramFill, RiTwitterFill };

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { footerLinks } from "./../ImpExp.jsx";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const ServicePricesSection = () => {
   const sectionRef = useRef(null);

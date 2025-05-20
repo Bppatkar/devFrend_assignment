@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { Button } from "./../ImpExp.jsx";
 
 const HeroSection = () => {
   const heroRef = useRef(null);

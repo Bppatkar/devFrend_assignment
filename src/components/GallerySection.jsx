@@ -1,4 +1,6 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { galleryImages } from "./../ImpExp.jsx";
 
 const GallerySection = () => {
   const sectionRef = useRef(null);

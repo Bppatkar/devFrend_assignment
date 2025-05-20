@@ -1,3 +1,5 @@
+import { MapPin, Phone, Clock } from "./../ImpExp.jsx";
+
 const InfoBar = () => {
   return (
     <div className="bg-amber-800 text-white py-4">
