@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { footerLinks } from "./../data/commonData.js";
+import { footerLinks, businessInfo } from "./../data/commonData.js"; // Import businessInfo
 import ThemeSwitcher from "./ThemeSwitcher.jsx";
-import { FaPhoneAlt } from "react-icons/fa"; // Keep FaPhoneAlt from fa
+import { FaPhoneAlt } from "react-icons/fa";
 import { FaRegCircleUser } from "react-icons/fa6"; // Correct import for FaRegCircleUser
 
 const Header = () => {
@@ -24,13 +24,18 @@ const Header = () => {
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo and Theme Switcher (Left side) */}
         <div className="flex items-center gap-2">
-          {/* Logo */}
+          {/* Logo - Using businessInfo.name */}
           <div className="flex items-center justify-center">
+            {/* You could replace this image with a logo for Fama Barber Shop */}
             <img
               src="https://pmcbarber.devfrend.com/_next/image?url=%2Fimages%2Fpmcbarber%2Flogo.webp&w=128&q=75"
-              alt="PMC Barbershop Logo"
-              className="w-10 h-10 md:w-12 md:h-12 mr-1" // Slightly smaller on mobile
+              alt={`${businessInfo.name} Logo`} // Use dynamic name
+              className="w-10 h-10 md:w-12 md:h-12 mr-1"
             />
+            {/* Optional: Add business name next to logo if desired */}
+            <span className="hidden md:block text-xl font-bold text-gray-900 dark:text-gray-100">
+              {businessInfo.name}
+            </span>
           </div>
         </div>
 
@@ -57,11 +62,11 @@ const Header = () => {
           {/* Contact Info and Book Button */}
           <div className="flex items-center space-x-4">
             <a
-              href="tel:+19408081569"
+              href={`tel:${businessInfo.phone.replace(/ /g, "")}`} // Use dynamic phone, remove spaces for tel: link
               className="flex items-center text-gray-700 dark:text-gray-300 hover:text-amber-500 transition-colors font-medium"
             >
               <FaPhoneAlt className="w-4 h-4 mr-1" />
-              +1 940-808-1569
+              {businessInfo.phone} {/* Use dynamic phone */}
             </a>
             <button
               className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 dark:bg-amber-700 dark:hover:bg-amber-800"
@@ -72,44 +77,47 @@ const Header = () => {
           </div>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-gray-700 dark:text-gray-300 focus:outline-none"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle mobile menu"
-        >
-          {isMobileMenuOpen ? (
-            // Close Icon
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            // Menu Icon
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          )}
-        </button>
+        {/* Mobile Menu Button (and Theme Switcher for mobile) */}
+        <div className="flex items-center md:hidden">
+          <ThemeSwitcher /> {/* Theme switcher on mobile */}
+          <button
+            className="ml-4 text-gray-700 dark:text-gray-300 focus:outline-none"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? (
+              // Close Icon
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              // Menu Icon
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation Menu */}
@@ -128,11 +136,11 @@ const Header = () => {
             ))}
             <li>
               <a
-                href="tel:+19408081569"
+                href={`tel:${businessInfo.phone.replace(/ /g, "")}`} // Use dynamic phone, remove spaces
                 className="flex items-center py-2 text-gray-700 dark:text-gray-300 hover:text-amber-500 font-medium"
               >
                 <FaPhoneAlt className="w-4 h-4 mr-2" />
-                +1 940-808-1569
+                {businessInfo.phone} {/* Use dynamic phone */}
               </a>
             </li>
             <li>

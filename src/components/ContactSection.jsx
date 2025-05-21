@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from "react-icons/fa";
 import { FaSpinner } from "react-icons/fa";
+import { businessInfo } from './../data/commonData.js'; // Import businessInfo
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -44,7 +45,7 @@ const ContactSection = () => {
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitSuccess(true);
-      setFormData({ name: "", phone: "", service: "", date: "", message: "" }); 
+      setFormData({ name: "", phone: "", service: "", date: "", message: "" });
     }, 2000);
   };
 
@@ -55,8 +56,14 @@ const ContactSection = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
-          <div className="w-20 h-1 bg-amber-500 mx-auto"></div>
+          <h2 className="text-3xl font-bold mb-4 inline-block relative group"> {/* Added inline-block, relative, group */}
+            Contact Us
+            <span className="block h-1 bg-gradient-to-r from-blue-500 to-teal-400 absolute bottom-0 left-0 w-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+          </h2>
+          {/* The static line div is no longer needed here if you have the animated one */}
+          {/* <div className="w-20 h-1 mx-auto relative">
+            <span className="block h-1 bg-gradient-to-r from-blue-500 to-teal-400 absolute bottom-0 left-0 w-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+          </div> */}
           <p className="text-gray-600 dark:text-gray-400 mt-4">
             Ready for a fresh look? Book your appointment today or contact us
             for any questions.
@@ -70,18 +77,47 @@ const ContactSection = () => {
               <div className="flex items-center">
                 <FaMapMarkerAlt className="w-6 h-6 mr-2 text-amber-500" />
                 <span>
-                  518 Acme St unit 101, Denton, TX 76205, United States
+                  {businessInfo.location} {/* Dynamic location */}
                 </span>
               </div>
               <div className="flex items-center">
                 <FaPhoneAlt className="w-6 h-6 mr-2 text-amber-500" />
-                <span>+1 940-808-1569</span>
+                <a href={`tel:${businessInfo.phone.replace(/ /g, '')}`} className="hover:underline">
+                  {businessInfo.phone} {/* Dynamic phone */}
+                </a>
               </div>
               <div className="flex items-center">
                 <FaClock className="w-6 h-6 mr-2 text-amber-500" />
                 <span>
-                  Mon-Fri 9:00 AM - 7:00 PM, Sat 9:00 AM - 5:00 PM, Sun Closed
+                  {businessInfo.status} {/* Dynamic status */}
                 </span>
+              </div>
+              {/* Google Maps Embed */}
+              {businessInfo.googleMapsEmbedUrl && (
+                <div className="mt-8 rounded-lg overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
+                  <iframe
+                    src={businessInfo.googleMapsEmbedUrl}
+                    width="100%"
+                    height="300" // Adjust height as needed
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Fama Barber Shop Location" // Add a title for accessibility
+                  ></iframe>
+                </div>
+              )}
+                {/* Google Maps Directions Link (still useful if map doesn't load or for native app) */}
+                <div className="mt-4">
+                <a
+                  href={businessInfo.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                >
+                  <FaMapMarkerAlt className="w-5 h-5 mr-1" />
+                  Get Directions on Google Maps
+                </a>
               </div>
             </div>
           </div>

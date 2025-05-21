@@ -10,8 +10,10 @@ const TestimonialsSection = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">What Our Clients Say</h2>
-          <div className="w-20 h-1 bg-amber-500 mx-auto"></div>
+          <h2 className="text-3xl font-bold mb-4 inline-block relative group"> {/* Added inline-block */}
+            What Our Clients Say
+            <span className="block h-1 bg-gradient-to-r from-blue-500 to-teal-400 absolute bottom-0 left-0 w-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+          </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((review, index) => (
