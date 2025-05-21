@@ -1,24 +1,33 @@
 import React from "react";
-import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from "react-icons/fa"; 
+import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from "react-icons/fa";
+import { businessInfo } from "./../data/commonData.js";
 
 const InfoBar = () => {
   return (
-    <div className="bg-amber-800 dark:bg-amber-900 text-white py-4">
+    // Changed background to a very subtle dark gradient or a solid color that fits the theme
+    // py-3 instead of py-4 for a slightly slimmer bar
+    <div className="bg-gradient-to-r from-gray-100 to-gray-50 dark:from-gray-950 dark:to-gray-800 text-gray-800 dark:text-gray-200 py-3 shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center text-sm md:text-base">
-          <div className="flex items-center mb-2 md:mb-0">
-            <FaMapMarkerAlt className="w-4 h-4 mr-2" />
-            <span>518 Acme St unit 101, Denton, TX 76205, United States</span>
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm md:text-base font-medium">
+          {/* Location */}
+          <div className="flex items-center mb-2 md:mb-0 group">
+            <FaMapMarkerAlt className="w-4 h-4 mr-2 text-blue-500 dark:text-teal-400 group-hover:text-amber-500 transition-colors" />
+            <span className="group-hover:text-amber-500 transition-colors">{businessInfo.location}</span>
           </div>
-          <div className="flex items-center mb-2 md:mb-0">
-            <FaPhoneAlt className="w-4 h-4 mr-2" />
-            <span>+1 940-808-1569</span>
+          {/* Phone */}
+          <div className="flex items-center mb-2 md:mb-0 group">
+            <FaPhoneAlt className="w-4 h-4 mr-2 text-blue-500 dark:text-teal-400 group-hover:text-amber-500 transition-colors" />
+            <a
+              href={`tel:${businessInfo.phone.replace(/ /g, "")}`}
+              className="hover:text-amber-500 transition-colors"
+            >
+              {businessInfo.phone}
+            </a>
           </div>
-          <div className="flex items-center">
-            <FaClock className="w-4 h-4 mr-2" />
-            <span>
-              Mon-Fri 9:00 AM - 7:00 PM, Sat 9:00 AM - 5:00 PM, Sun Closed
-            </span>
+          {/* Status */}
+          <div className="flex items-center group">
+            <FaClock className="w-4 h-4 mr-2 text-blue-500 dark:text-teal-400 group-hover:text-amber-500 transition-colors" />
+            <span className="group-hover:text-amber-500 transition-colors">{businessInfo.status}</span>
           </div>
         </div>
       </div>
