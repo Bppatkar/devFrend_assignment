@@ -65,16 +65,27 @@ To run this project locally, follow these steps:
     # or
     yarn start
     ```
-  
+  ![Screenshot 2025-05-21 130412](https://github.com/user-attachments/assets/e8b87a9f-78e8-4218-8d39-2fd9af2fe7f8)
+![Screenshot 2025-05-21 130442](https://github.com/user-attachments/assets/be7606ae-138b-460f-a1a1-bbf6a028561c)
+![Screenshot 2025-05-21 130505](https://github.com/user-attachments/assets/520b726c-5d17-440b-9be6-7c60161729cd)
+![Screenshot 2025-05-21 130532](https://github.com/user-attachments/assets/28437587-63b2-45af-969b-4d2d80451fbe)
+![Screenshot 2025-05-21 130550](https://github.com/user-attachments/assets/03a8b7e4-ab04-453d-a231-d9bb9be99cc3)
+![Screenshot 2025-05-21 130602](https://github.com/user-attachments/assets/fdf36bf1-9ea0-45a4-91b6-eeaaceaf6ce1)
+![Screenshot 2025-05-21 130616](https://github.com/user-attachments/assets/3a3a0143-2838-4f1e-8f38-7692149fc69c)
+![Screenshot 2025-05-21 130627](https://github.com/user-attachments/assets/4adc990f-1aa1-4d08-a0c2-6f62a323bd34)
+![Screenshot 2025-05-21 130643](https://github.com/user-attachments/assets/c4a6f6bf-17f9-40e6-af71-41ba106a4106)
 
-![Screenshot 2025-05-21 130505](https://github.com/user-attachments/assets/d0c69f12-a8ff-4160-bc6a-e92d85e76516)
-![Screenshot 2025-05-21 130442](https://github.com/user-attachments/assets/c04972be-26d1-46c4-be07-3cf0607cf0c6)
-![Screenshot 2025-05-21 130412](https://github.com/user-attachments/assets/8ad023fb-dc29-4169-9af5-ec6ce870fab2)
-![Screenshot 2025-05-21 130643](https://github.com/user-attachments/assets/41d779b9-c7a1-48f9-8a7c-79dbfa7d216b)
-![Screenshot 2025-05-21 130627](https://github.com/user-attachments/assets/c9fb7b80-6c3d-4441-8e03-742a15b63f82)
-![Screenshot 2025-05-21 130616](https://github.com/user-attachments/assets/0139ee5b-5f73-4a0d-b4fe-b866ae4dfdc7)
-![Screenshot 2025-05-21 130602](https://github.com/user-attachments/assets/fb10d432-e1cd-4b33-b8c2-bfa9237201cd)
-![Screenshot 2025-05-21 130550](https://github.com/user-attachments/assets/acb5a9a4-6895-4137-959f-9abb746e08d7)
-![Screenshot 2025-05-21 130532](https://github.com/user-attachments/assets/cf4a0932-8191-420c-a39d-fc5178dce545)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
