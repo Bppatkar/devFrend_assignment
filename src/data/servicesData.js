@@ -55,28 +55,57 @@ export const services = [
   },
 ];
 
+
 export const servicePrices = [
   {
+    id: 1,
     category: "Classic Services",
+    price: "$25",
+    unit: "/mo",
+    isPopular: true, // This will enable the special styling for this card
+    buttonText: "Book Now",
+    buttonVariant: "primary", // This will make the button the specific dark blue
     items: [
-      { name: "Haircut", price: "$25" },
-      { name: "Beard Trim", price: "$15" },
-      { name: "Shave", price: "$30" },
+      { name: "Men's Haircut" },
+      { name: "Kids Haircut (12 & under)" },
+      { name: "Senior Haircut (65+)" },
+      { name: "Military/First Responder Cut" },
+      { name: "Basic Beard Trim" },
+      { name: "Neck & Line Cleanup (between cuts)" },
     ],
   },
   {
+    id: 2,
     category: "Premium Services",
+    price: "$35",
+    unit: "/mo",
+    isPopular: false,
+    buttonText: "Book Now",
+    buttonVariant: "secondary", // This will make the button light gray
     items: [
-      { name: "Premium Haircut", price: "$40" },
-      { name: "Deluxe Beard Trim", price: "$25" },
-      { name: "Hot Towel Shave", price: "$35" },
+      { name: "Haircut & Beard Combo" },
+      { name: "Hot Towel Shave" },
+      { name: "Full Beard Shaping & Design" },
+      { name: "Color Camo (Gray Blending)" },
+      { name: "Hair & Scalp Treatment" },
+      { name: "Head Shave with Hot Towel" },
     ],
   },
   {
+    id: 3,
     category: "Packages",
+    price: "$50",
+    unit: "/mo",
+    isPopular: false,
+    buttonText: "Inquire",
+    buttonVariant: "secondary", // This will make the button light gray
     items: [
-      { name: "Haircut & Beard", price: "$35" },
-      { name: "Haircut & Shave", price: "$50" },
+      { name: "The Works (Cut, Shave, Treatment)" },
+      { name: "Father & Son Combo" },
+      { name: "Groom's Package" },
+      { name: "Monthly Membership (2 cuts/mo)" },
+      { name: "First-Time Client Special" },
+      { name: "Loyalty Program" },
     ],
   },
 ];

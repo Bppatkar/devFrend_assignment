@@ -18,6 +18,7 @@ const TestimonialsSection = React.lazy(() =>
   import("./components/TestimonialsSection")
 );
 const ContactSection = React.lazy(() => import("./components/ContactSection"));
+const FAQSection = React.lazy(() => import("./components/FAQSection"));
 const Footer = React.lazy(() => import("./components/Footer"));
 
 const AnimatedSpinner = () => (
@@ -76,6 +77,7 @@ function App() {
           <GallerySection />
           <ServicePricesSection />
           <TestimonialsSection />
+          <FAQSection />
           <ContactSection />
         </Suspense>
       </main>

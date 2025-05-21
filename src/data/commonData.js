@@ -30,3 +30,6 @@ export const businessInfo = {
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3345.987747863583!2d-97.12644268480393!3d33.208118980838186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864db59a3c9e6fcf%3A0xcb5e0f7a7f45778a!2sFama%20Barber%20Shop%20and%20Beauty%20Salon!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus",
   serviceComment: "Costly compared to other barbershops with better haircuts.",
 };
+
+
+
