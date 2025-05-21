@@ -1,12 +1,83 @@
-# React + Vite
+# Barbershop Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and animated frontend landing page for a barbershop. This project was developed as a frontend assignment, focusing on clean UI, smooth animations, and a user-friendly experience.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Responsive Design:** Optimized for seamless viewing and interaction across all devices (desktops, tablets, and mobile phones).
+* **Hero Section:** Engaging introduction to the barbershop.
+* **Interactive Service & Pricing Cards:**
+    * Clearly displays different service categories and their pricing.
+    * Features a highlighted "Most Popular" card with distinct styling.
+    * Smooth hover effects (scale and shadow) on all cards for an enhanced user experience.
+* **Dynamic FAQ Section:**
+    * Accordion-style list of frequently asked questions with expandable answers.
+    * Category filtering (e.g., "General", "Services", "Pricing") to easily navigate questions.
+    * Search functionality to quickly find specific answers.
+* **Smooth Animations:** Utilizes GSAP (GreenSock Animation Platform) for subtle and professional scroll-triggered entrance animations across various sections.
+* **Clean and Modern UI:** A sleek, intuitive, and visually appealing user interface.
+* **Dark Mode Support:** (If implemented, add this bullet point: Seamlessly switches between light and dark themes for user comfort.)
 
-## Expanding the ESLint configuration
+## 🚀 Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Experience the live application here:
+[https://dev-frend-assignment-five.vercel.app/](https://dev-frend-assignment-five.vercel.app/)
+
+## 💻 Tech Stack
+
+* **React.js:** A JavaScript library for building user interfaces.
+* **Tailwind CSS:** A utility-first CSS framework for rapidly building custom designs.
+* **GSAP (GreenSock Animation Platform):** A robust JavaScript animation library for creating high-performance, professional animations.
+* **Vercel:** For seamless deployment and hosting.
+
+## 💡 Key Learnings & Development Highlights
+
+During the development of this project, I focused on:
+
+* **Precise UI Implementation:** Translating design mockups into pixel-perfect, responsive components.
+* **Advanced CSS with Tailwind:** Mastering complex styling patterns, including custom box-shadows and gradients to achieve specific visual effects.
+* **Dynamic Component Building:** Creating reusable and interactive components like the pricing cards and the accordion-based FAQ section.
+* **Integrating GSAP for Animations:** Effectively using GSAP with ScrollTrigger to create smooth, performant, and engaging animations on scroll.
+* **State Management in React:** Efficiently managing component states for features like accordion toggling, category filtering, and search functionality.
+* **Deployment Workflow:** Gaining hands-on experience with the deployment process to Vercel for a live application.
+
+## 🛠️ Installation and Setup
+
+To run this project locally, follow these steps:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/Bppatkar/devFrend_assignment.git](https://github.com/Bppatkar/devFrend_assignment.git)
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd devFrend_assignment
+    ```
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+4.  **Start the development server:**
+    ```bash
+    npm start
+    # or
+    yarn start
+    ```
+    The application will open in your browser at `http://localhost:3000`.
+
+## 🤝 Contributing
+
+Feel free to fork the repository, open issues, or submit pull requests. Any contributions are welcome!
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE). (You might need to create a `LICENSE` file if you haven't already).
+
+---
+
+**Connect with me:**
+
+[Your LinkedIn Profile Link (Optional)]
+[Your GitHub Profile Link (Optional)]
