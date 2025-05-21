@@ -67,17 +67,4 @@ To run this project locally, follow these steps:
     ```
     The application will open in your browser at `http://localhost:3000`.
 
-## 🤝 Contributing
 
-Feel free to fork the repository, open issues, or submit pull requests. Any contributions are welcome!
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE). (You might need to create a `LICENSE` file if you haven't already).
-
----
-
-**Connect with me:**
-
-[Your LinkedIn Profile Link (Optional)]
-[Your GitHub Profile Link (Optional)]
