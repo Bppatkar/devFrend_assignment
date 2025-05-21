@@ -1,13 +1,13 @@
-import React, { useRef, useLayoutEffect } from "react"; // Import useRef and useLayoutEffect
+import React, { useRef, useLayoutEffect } from "react"; 
 import { FaMapMarkerAlt, FaPhoneAlt, FaFacebookF, FaInstagram, FaTwitter, FaArrowUp } from "react-icons/fa";
 import { footerLinks, businessInfo } from "./../data/commonData.js";
-import { gsap } from 'gsap'; // Import gsap
-import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Import ScrollTrigger
+import { gsap } from 'gsap'; 
+import { ScrollTrigger } from 'gsap/ScrollTrigger'; 
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
-  // Refs for elements to animate
+ 
   const footerRef = useRef(null);
   const companyInfoRef = useRef(null);
   const quickLinksRef = useRef(null);
@@ -21,49 +21,49 @@ const Footer = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Set initial states to be hidden and slightly offset
+     
       gsap.set(companyInfoRef.current, { opacity: 0, y: 50 });
       gsap.set(quickLinksRef.current, { opacity: 0, y: 50 });
       gsap.set(contactUsRef.current, { opacity: 0, y: 50 });
       gsap.set(copyrightRef.current, { opacity: 0, y: 30 });
       gsap.set(scrollToTopButtonRef.current, { opacity: 0, y: 20 });
 
-      // Create a timeline for the footer columns
+     
       const footerColumnsTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: footerRef.current,
-          start: "top 95%", // Trigger when the top of the footer enters the bottom of the viewport
+          start: "top 95%", 
           toggleActions: "play reverse play reverse",
         },
       });
 
       footerColumnsTimeline
         .to(companyInfoRef.current, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" })
-        .to(quickLinksRef.current, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.6") // Stagger
-        .to(contactUsRef.current, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.6"); // Stagger
+        .to(quickLinksRef.current, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.6") 
+        .to(contactUsRef.current, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.6"); 
 
-      // Animate copyright and scroll to top button
+   
       const bottomFooterTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: footerRef.current,
-          start: "top 90%", // Trigger slightly later for the bottom elements
+          start: "top 90%", 
           toggleActions: "play reverse play reverse",
         },
       });
 
       bottomFooterTimeline
         .to(copyrightRef.current, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" })
-        .to(scrollToTopButtonRef.current, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, "-=0.4"); // Overlap
+        .to(scrollToTopButtonRef.current, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, "-=0.4"); 
 
-    }, footerRef); // <- scope all GSAP animations within the footerRef
+    }, footerRef); 
 
-    return () => ctx.revert(); // Clean up GSAP animations on unmount
+    return () => ctx.revert(); 
   }, []);
 
   return (
     <footer
-      className="bg-gray-800 dark:bg-gray-950 text-white py-6 overflow-hidden" // Added overflow-hidden
-      ref={footerRef} // Attach ref to the footer
+      className="bg-gray-800 dark:bg-gray-950 text-white py-6 overflow-hidden" 
+      ref={footerRef} 
     >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

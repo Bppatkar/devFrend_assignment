@@ -8,11 +8,11 @@ gsap.registerPlugin(ScrollTrigger);
 const GallerySection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Refs for animations
+
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
-  const sliderContainerRef = useRef(null); // Ref for the main slider div
-  const currentImageRef = useRef(null); // Ref for the currently displayed image
+  const sliderContainerRef = useRef(null); 
+  const currentImageRef = useRef(null); 
 
   const goToNextImage = () => {
     setCurrentImageIndex((prevIndex) =>
@@ -26,14 +26,14 @@ const GallerySection = () => {
     );
   };
 
-  // GSAP animations for section entrance
+  
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Set initial states to be hidden
+     
       gsap.set(headingRef.current, { opacity: 0, y: 50 });
       gsap.set(sliderContainerRef.current, { opacity: 0, y: 100, scale: 0.95 });
 
-      // Animate header
+     
       gsap.to(headingRef.current, {
         opacity: 1,
         y: 0,
@@ -46,17 +46,17 @@ const GallerySection = () => {
         },
       });
 
-      // Animate slider container
+     
       gsap.to(sliderContainerRef.current, {
         opacity: 1,
         y: 0,
         scale: 1,
         duration: 1,
         ease: "power3.out",
-        delay: 0.2, // Animate slightly after the heading
+        delay: 0.2, 
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 75%", // Trigger slightly later than heading for sequence
+          start: "top 75%", 
           toggleActions: "play reverse play reverse",
         },
       });
@@ -66,24 +66,24 @@ const GallerySection = () => {
     return () => ctx.revert();
   }, []);
 
-  // GSAP animation for image transition within the slider
+
   useLayoutEffect(() => {
-    // Only animate if the imageRef exists and an image is being loaded
+    
     if (currentImageRef.current) {
       gsap.fromTo(
         currentImageRef.current,
-        { opacity: 0, scale: 1.05 }, // Start slightly scaled and faded
+        { opacity: 0, scale: 1.05 }, 
         { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" }
       );
     }
-  }, [currentImageIndex]); // Re-run this effect when currentImageIndex changes
+  }, [currentImageIndex]); 
 
   if (galleryImages.length === 0) {
     return (
       <section
         id="gallery"
         className="py-16 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100"
-        ref={sectionRef} // Still attach sectionRef for consistency
+        ref={sectionRef} 
       >
         <div className="container mx-auto px-4 text-center">
           <h2 ref={headingRef} className="text-3xl font-bold mb-4 inline-block relative group">
@@ -99,12 +99,12 @@ const GallerySection = () => {
   return (
     <section
       id="gallery"
-      className="py-16 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden" // Added overflow-hidden
-      ref={sectionRef} // Attach ref to the section
+      className="py-16 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden" 
+      ref={sectionRef} 
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          {/* "Our Barbershop Gallery" heading with animated gradient underline */}
+         
           <h2 ref={headingRef} className="text-3xl font-bold mb-4 inline-block relative group">
             Our Barbershop Gallery
             <span className="block h-1 bg-gradient-to-r from-blue-500 to-teal-400 absolute bottom-0 left-0 w-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
@@ -113,12 +113,12 @@ const GallerySection = () => {
 
         {/* Adjusted: max-w-4xl and h-[500px] */}
         <div
-          ref={sliderContainerRef} // Attach ref to the slider container
+          ref={sliderContainerRef} 
           className="relative w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-xl"
         >
           {/* Main Image */}
           <img
-            ref={currentImageRef} // Attach ref to the current image for internal transitions
+            ref={currentImageRef}
             src={galleryImages[currentImageIndex]}
             alt={`Gallery ${currentImageIndex + 1}`}
             className="w-full h-[500px] object-cover"

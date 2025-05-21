@@ -1,9 +1,9 @@
-import React, { useState, useRef, useLayoutEffect } from "react"; // Import useRef and useLayoutEffect
+import React, { useState, useRef, useLayoutEffect } from "react"; 
 import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from "react-icons/fa";
 import { FaSpinner } from "react-icons/fa";
-import { businessInfo } from './../data/commonData.js'; // Import businessInfo
-import { gsap } from 'gsap'; // Import gsap
-import { ScrollTrigger } from 'gsap/ScrollTrigger'; // Import ScrollTrigger
+import { businessInfo } from './../data/commonData.js'; 
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'; 
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +11,7 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    service: "", // This will hold the selected service value
+    service: "", 
     date: "",
     message: "",
   });
@@ -19,12 +19,12 @@ const ContactSection = () => {
   const [submitError, setSubmitError] = useState("");
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  // Refs for animations
+ 
   const sectionRef = useRef(null);
-  const headingRef = useRef(null); // Ref for "Contact Us" h2 tag
-  const descriptionRef = useRef(null); // Ref for the paragraph description
-  const contactInfoRef = useRef(null); // Ref for the contact information div
-  const contactFormRef = useRef(null); // Ref for the form
+  const headingRef = useRef(null); 
+  const descriptionRef = useRef(null); 
+  const contactInfoRef = useRef(null); 
+  const contactFormRef = useRef(null); 
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -40,7 +40,7 @@ const ContactSection = () => {
     setSubmitError("");
     setSubmitSuccess(false);
 
-    // Basic validation
+   
     if (
       !formData.name ||
       !formData.phone ||
@@ -52,7 +52,7 @@ const ContactSection = () => {
       return;
     }
 
-    // Simulate form submission
+   
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitSuccess(true);
@@ -62,12 +62,12 @@ const ContactSection = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Set initial states for elements to be hidden
+      
       gsap.set([headingRef.current, descriptionRef.current], { opacity: 0, y: 50 });
-      gsap.set(contactInfoRef.current, { opacity: 0, x: -100 }); // Slide in from left
-      gsap.set(contactFormRef.current, { opacity: 0, x: 100 }); // Slide in from right
+      gsap.set(contactInfoRef.current, { opacity: 0, x: -100 });
+      gsap.set(contactFormRef.current, { opacity: 0, x: 100 });
 
-      // Header and description animation
+
       const headerTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -78,36 +78,36 @@ const ContactSection = () => {
 
       headerTimeline
         .to(headingRef.current, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" })
-        .to(descriptionRef.current, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.4"); // Overlap
+        .to(descriptionRef.current, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.4"); 
 
-      // Contact Info and Form animation
+    
       const contentTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 70%", // Trigger slightly later than header
+          start: "top 70%", 
           toggleActions: "play reverse play reverse",
         },
       });
 
       contentTimeline
         .to(contactInfoRef.current, { opacity: 1, x: 0, duration: 1, ease: "power3.out" })
-        .to(contactFormRef.current, { opacity: 1, x: 0, duration: 1, ease: "power3.out" }, "-=0.7"); // Overlap
+        .to(contactFormRef.current, { opacity: 1, x: 0, duration: 1, ease: "power3.out" }, "-=0.7"); 
 
-    }, sectionRef); // <- scope all GSAP animations within the sectionRef
+    }, sectionRef); 
 
-    return () => ctx.revert(); // Clean up GSAP animations on unmount
+    return () => ctx.revert(); 
   }, []);
 
   return (
     <section
       id="contact"
-      className="py-16 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden" // Added overflow-hidden
-      ref={sectionRef} // Attach ref to the section
+      className="py-16 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden" 
+      ref={sectionRef} 
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2
-            ref={headingRef} // Attach ref to the heading
+            ref={headingRef} 
             className="text-3xl font-bold mb-4 inline-block relative group"
           >
             Contact Us

@@ -4,19 +4,18 @@ import ThemeSwitcher from "./ThemeSwitcher.jsx";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { gsap } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin"; // Import ScrollToPlugin
+import { ScrollToPlugin } from "gsap/ScrollToPlugin"; 
 
-gsap.registerPlugin(ScrollToPlugin); // Register ScrollToPlugin for smooth scrolling
-
+gsap.registerPlugin(ScrollToPlugin); 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Refs for GSAP animations
   const headerRef = useRef(null);
-  const logoWrapperRef = useRef(null); // Ref for the logo image and text container
-  const navLinksListRef = useRef(null); // Ref for the <ul> of nav links
-  const contactInfoRef = useRef(null); // Ref for the contact info div (phone, book button)
-  const mobileMenuRef = useRef(null); // For the mobile dropdown menu
+  const logoWrapperRef = useRef(null); 
+  const navLinksListRef = useRef(null); 
+  const contactInfoRef = useRef(null); 
+  const mobileMenuRef = useRef(null); 
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
