@@ -1,93 +1,86 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { Button } from "./../ImpExp.jsx";
+import React from "react";
+import { FaMapMarkerAlt, FaCut, FaPhoneAlt, FaChevronDown } from "react-icons/fa"; // Imported icons
 
 const HeroSection = () => {
-  const heroRef = useRef(null);
-  const headingRef = useRef(null);
-  const paragraphRef = useRef(null);
-  const button1Ref = useRef(null);
-  const button2Ref = useRef(null);
-  const imageRef = useRef(null);
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-  useEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: heroRef.current,
-        start: "top top",
-        //end: 'bottom top', // Removed fixed end point.
-        scrub: 0.5, // Add smooth scrubbing
-        //markers: true, // For debugging
-      },
-    });
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-    tl.fromTo(
-      headingRef.current,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-      0.2
-    );
-    tl.fromTo(
-      paragraphRef.current,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-      0.4
-    );
-    tl.fromTo(
-      [button1Ref.current, button2Ref.current],
-      { opacity: 0, scale: 0.8 },
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 0.5,
-        stagger: 0.2,
-        ease: "back.out(1.7)",
-      },
-      0.6
-    );
-    tl.fromTo(
-      imageRef.current,
-      { opacity: 0, x: 50 },
-      { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" },
-      0.4
-    );
-  }, []);
+  const scrollToNextSection = () => {
+    const nextSection = document.getElementById('services'); // Assuming 'services' is the next section
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
 
   return (
     <section
-      ref={heroRef}
       id="home"
-      className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-r from-amber-50 to-amber-100"
+      // Added relative positioning to handle the absolute image
+      className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100 relative overflow-hidden"
     >
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
-        <div className="md:w-1/2 mb-8 md:mb-0">
-          <h1 ref={headingRef} className="text-4xl md:text-5xl font-bold mb-4">
-            Ready for a Fresh Cut?
-          </h1>
-          <p ref={paragraphRef} className="text-lg text-gray-600 mb-6">
-            Visit PMC Barbershop for premium men's grooming services. Our expert
-            barbers are ready to give you a clean, precise cut and a relaxing
-            barbershop experience.
+      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+        {/* Left Content Area */}
+        <div className="md:w-1/2 mb-8 md:mb-0 text-center md:text-left z-10"> {/* Added z-10 to keep text above image on small screens */}
+          <p className="text-lg text-amber-600 dark:text-amber-400 font-semibold mb-2">
+            Premium Barber Services in Denton
           </p>
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+            Classic Cuts, Modern Style
+            <br />
+            <span className="text-amber-600 dark:text-amber-400">Premium Barber Shop</span>
+          </h1>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-lg md:max-w-none">
+            At PMC Barbershop, we combine traditional barbering techniques with modern styling to give you the perfect look. Our experienced barbers deliver precision cuts, beard grooming, and relaxing hot towel shaves in a classic barbershop atmosphere.
+          </p>
+          <div className="flex items-center text-gray-700 dark:text-gray-300 mb-6 justify-center md:justify-start">
+            <FaMapMarkerAlt className="w-5 h-5 mr-2 text-amber-500" />
+            <span>Denton, TX</span>
+          </div>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <Button ref={button1Ref} className="btn-primary">
-              Book an Appointment
-            </Button>
-            <Button ref={button2Ref} className="btn-secondary">
-              View Our Services
-            </Button>
+            <button
+              onClick={scrollToServices}
+              className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm text-base font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500"
+            >
+              <FaCut className="w-5 h-5 mr-2" />
+              Our Services
+            </button>
+            <button
+              onClick={scrollToContact}
+              className="inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 dark:bg-amber-700 dark:hover:bg-amber-800"
+            >
+              <FaPhoneAlt className="w-5 h-5 mr-2" />
+              Book Now
+            </button>
           </div>
         </div>
-        <div className="md:w-1/2 flex justify-center">
-          <div className="relative">
-            <img
-              ref={imageRef}
-              src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80"
-              alt="Barber cutting hair"
-              className="rounded-lg shadow-xl w-full max-w-md h-auto"
-            />
-          </div>
+        {/* Right Image Area - Modified for larger image */}
+        <div className="md:w-1/2 flex justify-center md:justify-end md:absolute md:inset-y-0 md:right-0 lg:w-[45%] xl:w-2/5"> {/* Adjusted width for larger image on desktop */}
+          <img
+            src="https://pmcbarber.devfrend.com/images/pmcbarber/hero.webp"
+            alt="PMC Barbershop Team"
+            // Adjusted classes for bigger image
+            className="rounded-lg shadow-xl w-full h-auto md:h-full object-cover md:object-contain"
+            // For smaller screens, still let it scale. On medium/large, make it fill height or contain.
+          />
         </div>
+      </div>
+      {/* Scroll Down Indicator */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce">
+        <button onClick={scrollToNextSection} aria-label="Scroll down">
+          <FaChevronDown className="w-8 h-8 text-amber-500" />
+        </button>
       </div>
     </section>
   );

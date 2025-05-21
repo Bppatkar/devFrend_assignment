@@ -13,7 +13,7 @@ import {
   Calendar,
   ChevronDown,
 } from "lucide-react";
-import { RiFacebookFill, RiInstagramFill, RiTwitterFill } from 'react-icons/ri';
+import { RiFacebookFill, RiInstagramFill, RiTwitterFill } from "react-icons/ri";
 import { Button } from "@/components/ui/button.jsx";
 import { Input } from "@/components/ui/input.jsx";
 import { Textarea } from "@/components/ui/textarea.jsx";
@@ -69,19 +69,19 @@ const barbers = [
     name: "John Smith",
     title: "Master Barber",
     description: "Expert in classic cuts and modern styles.",
-    image: "https://source.unsplash.com/random/150x150/?barber,1", // Replace with actual image URLs
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=150&h=150", // Replace with actual image URLs
   },
   {
     name: "Jane Doe",
     title: "Senior Stylist",
     description: "Specializes in women's cuts and coloring.",
-    image: "https://source.unsplash.com/random/150x150/?barber,2", // Replace
+    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&w=50&h=50",
   },
   {
     name: "Mike Johnson",
     title: "Beard Specialist",
     description: "Passionate about beard grooming and styling.",
-    image: "https://source.unsplash.com/random/150x150/?barber,3", // Replace
+    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80", // Replace
   },
 ];
 
@@ -134,12 +134,11 @@ const faqData = [
 ];
 
 const galleryImages = [
-  "https://source.unsplash.com/random/400x300/?haircut,1", // Replace
-  "https://source.unsplash.com/random/400x300/?barbershop,2", // Replace
-  "https://source.unsplash.com/random/400x300/?haircut,3", // Replace
-  "https://source.unsplash.com/random/400x300/?barbershop,4", // Replace
-  "https://source.unsplash.com/random/400x300/?haircut,5", // Replace
-  "https://source.unsplash.com/random/400x300/?barbershop,6", // Replace
+  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=150&h=150",
+  "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&w=150&h=150",
+  "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&w=150&h=150",
+  "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&w=150&h=150",
+  "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&w=150&h=150",
 ];
 
 const footerLinks = [

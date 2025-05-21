@@ -1,28 +1,13 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { reviews, Star, cn } from "./../ImpExp.jsx";
+import React from "react";
+import { reviews } from "./../data/reviewsData.js";
+import { FaStar, FaUserCircle } from "react-icons/fa";
 
 const TestimonialsSection = () => {
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    gsap.from(sectionRef.current, {
-      opacity: 0,
-      y: 50,
-      duration: 0.8,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 80%",
-        //end: 'bottom top',
-        scrub: 0.5,
-        once: true,
-      },
-    });
-  }, []);
-
   return (
-    <section ref={sectionRef} className="py-16 bg-white">
+    <section
+      id="testimonials"
+      className="py-16 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">What Our Clients Say</h2>
@@ -30,9 +15,12 @@ const TestimonialsSection = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((review, index) => (
-            <div key={index} className="review-card">
+            <div
+              key={index}
+              className="bg-gray-50 dark:bg-gray-900 rounded-lg shadow-md p-6"
+            >
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4 overflow-hidden">
+                <div className="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center mr-4 overflow-hidden shrink-0">
                   {review.avatar ? (
                     <img
                       src={review.avatar}
@@ -40,26 +28,28 @@ const TestimonialsSection = () => {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <User className="text-gray-500 w-6 h-6" />
+                    <FaUserCircle className="text-gray-500 dark:text-gray-400 w-8 h-8" />
                   )}
                 </div>
                 <div>
-                  <h4 className="font-bold">{review.name}</h4>
+                  <h4 className="font-bold text-lg">{review.name}</h4>
                   <div className="flex items-center">
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <Star
+                      <FaStar
                         key={i}
-                        className={cn(
-                          "w-4 h-4",
-                          i < review.rating ? "text-amber-400" : "text-gray-300"
-                        )}
-                        fill="currentColor"
+                        className={`w-4 h-4 ${
+                          i < review.rating
+                            ? "text-amber-400"
+                            : "text-gray-300 dark:text-gray-600"
+                        }`}
                       />
                     ))}
                   </div>
                 </div>
               </div>
-              <p className="text-gray-600 italic">"{review.comment}"</p>
+              <p className="text-gray-600 dark:text-gray-400 italic">
+                "{review.comment}"
+              </p>
             </div>
           ))}
         </div>
